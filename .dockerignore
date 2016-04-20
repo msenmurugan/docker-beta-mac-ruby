@@ -1,0 +1,11 @@
+coverage
+.env*
+*-compose*.yml
+*.md
+Dockerfile*
+*.swp
+Gemfile.lock
+vendor/*
+.bundle
+.git
+.ruby-version
