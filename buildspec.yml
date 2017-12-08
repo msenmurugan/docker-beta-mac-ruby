@@ -1,1 +1,13 @@
-dfd
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - docker build --no-cache -t docker-beta-mac-ruby:latest .
+  post-build:
+    commands:
+      - docker save -o docker-beta-mac-ruby.tar docker-beta-mac-ruby:latest
+
+artifacts:
+  files:
+    - docker-beta-mac-ruby.tar
