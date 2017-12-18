@@ -4,6 +4,7 @@ phases:
   pre_build:
     commands:
       - dockerLoginCmd=$(aws ecr get-login --no-include-email --region us-east-1)
+      - $(dockerLoginCmd)
   build:
     commands:
       - docker build --no-cache -t docker-beta-mac-ruby:latest .
