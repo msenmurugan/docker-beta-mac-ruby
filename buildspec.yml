@@ -1,13 +1,13 @@
 version: 0.2
 
 phases:
+  pre_build:
+    commands:
+      - dockerLoginCmd=$(aws ecr get-login --no-include-email --region us-east-1)
   build:
     commands:
       - docker build --no-cache -t docker-beta-mac-ruby:latest .
   post_build:
     commands:
-      - docker save -o docker-beta-mac-ruby.tar docker-beta-mac-ruby:latest
-
-artifacts:
-  files:
-    - docker-beta-mac-ruby.tar
+      - docker tag docker-beta-mac-ruby:latest 449325314696.dkr.ecr.us-east-1.amazonaws.com/docker-beta-mac-ruby:latest
+      - docker push 449325314696.dkr.ecr.us-east-1.amazonaws.com/docker-beta-mac-ruby:latest
