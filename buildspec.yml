@@ -10,5 +10,5 @@ phases:
       - docker build -t alpine:latest .
   post_build:
     commands:
-      - docker tag docker-beta-mac-ruby:latest 449325314696.dkr.ecr.us-east-1.amazonaws.com/alpine:latest
+      - docker tag alpine:latest 449325314696.dkr.ecr.us-east-1.amazonaws.com/alpine:latest
       - docker push 449325314696.dkr.ecr.us-east-1.amazonaws.com/alpine:latest
