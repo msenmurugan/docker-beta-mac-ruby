@@ -7,8 +7,8 @@ phases:
       - eval $dockerLoginCmd
   build:
     commands:
-      - docker build --no-cache -t docker-beta-mac-ruby:latest .
+      - docker build -t alpine:latest .
   post_build:
     commands:
-      - docker tag docker-beta-mac-ruby:latest 449325314696.dkr.ecr.us-east-1.amazonaws.com/docker-beta-mac-ruby:latest
-      - docker push 449325314696.dkr.ecr.us-east-1.amazonaws.com/docker-beta-mac-ruby:latest
+      - docker tag docker-beta-mac-ruby:latest 449325314696.dkr.ecr.us-east-1.amazonaws.com/alpine:latest
+      - docker push 449325314696.dkr.ecr.us-east-1.amazonaws.com/alpine:latest
