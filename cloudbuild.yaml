@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    curl -d "" -X POST http://ec2-54-205-198-237.compute-1.amazonaws.com:8081/webhook-perceptor
